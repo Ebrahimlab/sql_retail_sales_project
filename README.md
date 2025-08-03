@@ -133,4 +133,74 @@ WHERE total_sale > 1000
 ORDER BY total_sale DESC;
 '''
 
+6. **Demographic Patterns
+Transactions by gender and category**
+'''sql
+SELECT 
+    category,
+    gender,
+    COUNT(*) AS transaction_count
+FROM sales_records
+GROUP BY category, gender;
+'''
+
+7. **Temporal Analysis
+Peak sales periods
+WITH monthly_metrics**
+'''sql
+    SELECT
+        YEAR(sale_date) AS year,
+        MONTH(sale_date) AS month,
+        AVG(total_sale) AS avg_sale,
+        RANK() OVER(PARTITION BY YEAR(sale_date) ORDER BY AVG(total_sale) DESC) AS rank
+    FROM sales_records
+    GROUP BY YEAR(sale_date), MONTH(sale_date)
+)
+SELECT year, month, avg_sale
+FROM monthly_metrics
+WHERE rank = 1;
+'''
+
+
+8. **Customer Value
+Top 5 spenders**
+'''sql
+SELECT TOP 5
+    customer_id,
+    SUM(total_sale) AS total_spend
+FROM sales_records
+GROUP BY customer_id
+ORDER BY total_spend DESC;
+'''
+
+
+9. **Category Engagement
+Unique customers per category**
+'''sql
+SELECT
+   category,
+    COUNT(DISTINCT customer_id) AS customer_count
+FROM sales_records
+GROUP BY category;
+'''
+
+10. **Operational Patterns
+Daily sales distribution
+WITH time_analysis**
+''sql 
+    SELECT *,
+        CASE
+            WHEN DATEPART(HOUR, sale_time) < 12 THEN 'Morning'
+            WHEN DATEPART(HOUR, sale_time) < 17 THEN 'Afternoon'
+            ELSE 'Evening'
+        END AS time_block
+    FROM sales_records
+)
+SELECT 
+    time_block,
+    COUNT(*) AS transaction_volume
+FROM time_analysis
+GROUP BY time_block;
+'''
+
 
