@@ -21,8 +21,10 @@ This SQL project showcases essential data analysis techniques for retail sales d
 - **Database Creation**: The project starts by creating a database named `Retail_Sales_db`.
 - **Table Creation**: The sales_data table stores retail transaction records with columns for transaction ID (primary key), sale date/time, customer details (ID, gender, age), product category (Beauty/Clothing/Electronics), quantity sold, pricing metrics (unit price, cost price, total sale amount), enabling comprehensive sales analysis, customer segmentation, and profitability tracking.
 
-''' sql
--- Database initialization
+
+
+``` sql
+**Database initialization**
 CREATE DATABASE Retail_Sales_db;
 
 
@@ -41,7 +43,7 @@ CREATE TABLE sales_records (
     cost_price DECIMAL(10,2),
     total_sale DECIMAL(12,2)
 );
-'''
+```
 
 ### 2. Data Quality Assurance 
 
