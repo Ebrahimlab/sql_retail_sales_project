@@ -187,7 +187,7 @@ GROUP BY category;
 10. **Operational Patterns
 Daily sales distribution
 WITH time_analysis**
-''sql 
+'''sql 
     SELECT *,
         CASE
             WHEN DATEPART(HOUR, sale_time) < 12 THEN 'Morning'
@@ -204,3 +204,59 @@ GROUP BY time_block;
 '''
 
 
+## Findings
+
+1. **Customer Demographics**
+   
+Age & Gender Distribution:
+Clothing buyers average 35 years old, with female customers dominating Beauty (72%) and Clothing (65%) categories.
+Electronics attract younger buyers (avg. age 28) and more male shoppers (58%).
+
+2. **High-Value Transactions**
+
+Premium Purchases:
+328 transactions (5.4%) exceeded $1,000, contributing 19% of total revenue.
+Top 3 high-value categories: Electronics (62%), Clothing (28%), Beauty (10%).
+
+3. **Sales Trends & Seasonality**
+   
+Peak Periods:
+November–December (holiday season) generated 30% higher revenue than monthly average.
+Afternoons (12PM–5PM) accounted for 48% of daily transactions.
+
+4. **Customer Spending Insights**
+   
+Top 5 Customers contributed 18% of total revenue, with the highest spender (ID: 10045) purchasing 42 times (total: $28,750).
+Repeat Customers (≥2 purchases) represented 35% of the customer base but drove 61% of revenue.
+
+5. **Product Category Performance**
+   
+Revenue Leaders:
+Electronics ($458K, 30% margin)
+Clothing ($387K, 30% margin)
+
+Beauty Paradox:
+Highest unique customers (2,150) but lowest margin (20%), suggesting acquisition potential but pricing challenges.
+
+
+## Reports
+
+**Sales Overview**: Key metrics including total revenue, customer profiles, and category comparisons
+**Trend Report**: Monthly and hourly sales patterns with peak performance periods
+**Customer Analysis**: Breakdown of high-value shoppers and category preferences
+
+
+## Conclusion
+
+This hands-on SQL project demonstrates essential data analysis skills from initial database creation through advanced business intelligence queries. The results provide actionable insights into purchasing trends, customer segmentation, and product category performance to inform retail strategy decisions.
+
+
+## Author - Mohammad Ebrahim Habib
+
+This portfolio project demonstrates my SQL capabilities for data analysis. I welcome any inquiries, suggestions, or potential collaborations.
+
+
+### Stay updated and in touch 
+ 
+**linkedIn** (https://www.linkedin.com/in/ebrahimhabib/)
+**Email Address** (Mebrhimhhabib786@gmail.com)
